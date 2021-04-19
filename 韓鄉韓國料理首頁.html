@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        span {
+            font-weight: bolder;
+            color: white;
+        }
+
+        .container {
+            width: 80%;
+            height: 100%;
+            margin: auto;
+            ;
+            /* background-color: cornflowerblue; */
+        }
+
+        nav #menu576px.container {
+            display: none;
+        }
+
+        /* navbar-------------------------------------------------------- */
+        .nav-frame {
+            width: 100%;
+            height: 128px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: black;
+            /* background-color: white; */
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .hamburger {
+            visibility: hidden;
+            /* display: none; */
+            width: 128px;
+            height: 128px;
+            background-image: url(./img/hamburger.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 64px;
+
+        }
+
+        .nav-frame .logo {
+            width: 128px;
+            height: 128px;
+            background-image: url(./img/Logo/檔案_001.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 128px;
+        }
+
+        .nav-frame .menu {
+            width: 128px;
+            height: 128px;
+            background-image: url(./img/menu.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 64px;
+        }
+
+        .nav-frame .menu:hover {
+            background-image: url(./img/menu-hover.jpeg);    
+        }
+
+        /* main------------------------------------------------- */
+        main {
+            position: relative;
+            top: 128px;
+            left: 0;
+            background-color: rgba(0, 0, 0, 1);
+
+        }
+
+        /* 主要圖片 */
+        .main-img {
+            /* width: 100%;
+            height: 1067px;
+            border-radius: 50px;
+            background-image: url(./img/main-img.JPG);
+            background-attachment: fixed;
+            background-position: center 100px;
+            background-repeat: no-repeat;
+            background-size: 100%; */
+
+            position: relative;
+            padding-bottom: 35%;
+            background-image: url(./img/main-img.JPG);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            margin: 0 auto;
+
+
+        }
+
+        /* 連結按鈕---------------------------------------- */
+        .link-btn {
+            width: 100%;
+            height: 64px;
+            margin: 20px;
+            display: flex;
+            justify-content: space-around;
+            /* background-color: yellow; */
+        }
+
+        .link-btn span {
+            margin: 10px;
+        }
+
+        .btn {
+            width: 200px;
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px white solid;
+
+        }
+        :target::before  {
+            content: "";
+            display:block;
+            /* width: 100%; */
+            height: 128px;
+        }
+
+        #nav:target::before  {
+            height: 0;    
+        }
+
+        
+        
+        /* foodA--------------------------------------------------- */
+
+        .foodA {
+            width: 100%;
+            height: 512px;
+            /* background-color: greenyellow; */
+            position: relative;
+        }
+
+        .img1 {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url(./img/石鍋拌飯.JPG);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+        }
+
+        .foodA-text {
+            width: 80%;
+            height: unset;
+            background-color: black;
+            opacity: 0.8;
+            /* margin-bottom: 10px; */
+        }
+
+        .foodA-text2 {
+            width: 80%;
+            height: unset;
+            background-color: black;
+            opacity: 0.8;
+            /* margin-bottom: 52px; */
+        }
+
+        .img2 {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            background-image: url(./img/辣炒年糕.JPG);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+        }
+
+        /* foodB------------------------------------------ */
+        
+        .foodB {
+            width: 100%;
+            height: unset;
+            /* background-color: rgb(47, 255, 168); */
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            border-top: 2px white solid;
+            margin-top: 64px;
+            
+            
+        }
+
+        .foodB-card {
+            width: 30%;
+            height: 80%;
+            
+            /* background-color: violet; */
+        }
+
+        .img3 {
+            width: 100%;
+            height: 358.4px;
+            background-image: url(./img/起司海鮮煎餅.JPG);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: yellow;
+        }
+
+        .img4 {
+            width: 100%;
+            height: 358.4px;
+            background-image: url(./img/銅盤火鍋.JPG);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: yellow;
+        }
+
+        .img5 {
+            width: 100%;
+            height: 358.4px;
+            background-image: url(./img/人蔘雞湯.JPG);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: yellow;
+        }
+
+        .foodB-text {
+            width: 100%;
+            height: unset;
+            background-color: black;
+            opacity: 0.8;
+        }
+
+        /* store-addres-taichung-------------------------- */
+        #foodC {
+            margin-top: 64px;
+            width: 100%;
+            height: 512px
+        }
+
+        .taichung-store-img {
+            width: 100%;
+            height: 512px;
+            border-radius: 50px;
+            background-image: url(./img/台中店.jpg);
+            /* background-attachment: fixed; */
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+
+            
+        }
+
+        .taichung-store-img .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .store-addres-taichung {
+            width: 100%;
+            height: 60%;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* opacity: 0.6; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .taichung-storeName {
+            width: 80%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .taichung-addres {
+            width: 80%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .taichung-addres span {
+            margin: 5px;
+        }
+
+        /* store-addres-oldCityHall ------------------*/
+        #foodD {
+            margin-top: 64px;
+        }
+
+        .store-addres-oldCityHall-frame {
+            width: 100%;
+            height: unset;
+            display: flex;
+            align-items:center ;
+            justify-content: center;
+            border-top: 1px white solid;
+        }
+
+        .oldCityHall-store-img {
+            width: 50%;
+            height: unset;
+            border-radius: 50px;
+            background-image: url(./img/市府店.jpg);
+            
+
+            position: relative;
+            padding-bottom: 40%;
+            
+            
+            background-repeat: no-repeat;
+            background-size: 100%;
+            margin: 0 auto;
+        }
+
+        
+
+        .store-addres-oldCityHall {
+            width: 50%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* opacity: 0.6; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 50px;
+        }
+
+        .oldCityHall-storeName {
+            width: unset;
+            height: 100px;
+        }
+
+        .oldCityHall-addres {
+            width: unset;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .oldCityHall-addres span {
+            margin: 5px;
+        }
+
+        /* footer--------------------------------------- */
+        footer {
+            width: 100%;
+            height: 320px;
+            background-color: black;
+            position: relative;
+            top: 128px;
+            left: 0;
+            border-top: white 3px dashed;
+        }
+
+        footer .container {
+            width: 80%;
+            height: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            /* background-color: royalblue; */
+        }
+
+        footer .logo {
+            width: 128px;
+            height: 128px;
+            background-image: url(./img/Logo/檔案_003.png);
+            background-position: center;
+            background-size: 100%;
+        }
+
+        footer .logo:hover {
+            width: 128px;
+            height: 128px;
+            background-image: url(./img/Logo/回首頁.png);
+            background-position: center;
+            background-size: 100%;
+        }
+
+        .madeBy-frame {
+            width: 100%;
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        footer span {
+            height: 32px;
+            margin: 20px;
+        }
+
+        .madedBy {
+            width: unset;
+            height: unset;
+            color: white;
+            /* background-color: seagreen; */
+        }
+
+        .social-media-link {
+            width: 20%;
+            height: unset;
+            display: flex;
+            justify-content: space-evenly;
+            align-content: center;
+            /* background-color: springgreen; */
+        }
+
+        .fb-link {
+            width: 64px;
+            height: 64px;
+            background-image: url(./img/Logo/fb.jpg);
+            background-size: 64px;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+        }
+
+        .fb-link:hover {
+            border: 2px white solid;
+        }
+
+        .ig-link:hover {
+            border: 2px white solid;
+        }
+
+        .ig-link {
+            width: 64px;
+            height: 64px;
+            background-image: url(./img/Logo/ig.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+
+        }
+
+        /* ++++++++++++++++++++++++++++++++++++++++++++++++++ */
+        @media(max-width:960px) {
+            .hamburger {
+                visibility: visible;
+            }
+
+            .hamburger:hover~#menu576px {
+                display: block;
+            }
+
+            main #menu1920px.container {
+                display: none;
+            }
+
+            #menu576px.container {
+                display: none;
+                width: 200px;
+                height: unset;
+                background-color: black;
+                position: absolute;
+                top: 128px;
+                left: 0;
+            }
+
+            #menu576px.container:hover {
+                display: block;
+
+            }
+
+            .link-btn {
+                width: 100%;
+                height: unset;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+
+                background-color: black;
+            }
+
+            /* foodA--------------------------------------------------- */
+
+            .foodA {
+                width: 100%;
+                height: 1024px;
+                /* background-color: greenyellow; */
+                position: relative;
+            }
+
+            .img1 {
+                width: 100%;
+                height: 50%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image: url(./img/石鍋拌飯.JPG);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+
+            }
+
+
+
+            .img2 {
+                width: 100%;
+                height: 50%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                background-image: url(./img/辣炒年糕.JPG);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+
+            }
+
+            /* foodB------------------------------------------ */
+            .container {
+                width: 100%;
+            }
+
+            .foodB {
+                width: 100%;
+                height: unset;
+                /* background-color: rgb(47, 255, 168); */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+            }
+
+            .foodB-card {
+                width: 100%;
+                height: 33.33%;
+
+
+                /* background-color: violet; */
+            }
+
+            .img3 {
+                width: 100%;
+                height: 512px;
+
+            }
+
+            .img4 {
+                width: 100%;
+                height: 512px;
+
+            }
+
+            .img5 {
+                width: 100%;
+                height: 512px;
+
+            }
+
+            .foodB-text {
+                width: 100%;
+                height: unset;
+                background-color: black;
+                opacity: 0.8;
+                display: flex;
+                justify-content: center;
+            }
+
+            .foodB-text span {
+                width: 50%;
+                height: 100%;
+            }
+
+            /* store-addres-taichung-------------------------- */
+            #foodC {
+                margin-top: 64px;
+                width: 100%;
+                height: 100%;
+            }
+
+            #foodC.taichung-store-img {
+                background-image: unset;
+            }
+
+            .taichung-576img {
+                width: 100%;
+                height: 512px;
+                border-radius: 50px;
+                background-image: url(./img/台中店.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .taichung-store-img .container {
+                height: unset;
+                border-top: 1px white solid;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .store-addres-taichung {
+                width: 100%;
+                height: unset;
+                background-color: rgba(0, 0, 0, 0.6);
+                /* opacity: 0.6; */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .taichung-storeName {
+                width: 80%;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .taichung-addres {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .taichung-addres span {
+                margin:0 0 0 20px;
+            }
+
+            /* store-addres-oldCityHall ------------------*/
+            #foodD {
+                margin-top: 64px;
+                border-top: 1px white solid;
+            }
+
+            .store-addres-oldCityHall-frame {
+                width: 100%;
+                height: unset;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .oldCityHall-store-img {
+                width: 100%;
+                height: 512px;
+                border-radius: 50px;
+                background-image: url(./img/市府店.jpg);
+                /* background-attachment: fixed; */
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+           
+               
+
+            .store-addres-oldCityHall {
+                width: 100%;
+                height: unset;
+                background-color: rgba(0, 0, 0, 0.6);
+                /* opacity: 0.6; */
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .oldCityHall-storeName {
+                width: 80%;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .oldCityHall-addres {
+                width: 80%;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .oldCityHall-addres span {
+                margin: 5px;
+            }
+            .ig-link{
+                width: 32px;
+                height: 32px;
+                background-size: 32px;
+            }
+            .fb-link{
+                width: 32px;
+                height: 32px;
+                background-size: 32px;
+
+            }
+
+        }
+
+        @media(max-width:600px){
+            .main-img{
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            background-image: url(./img/main-img.JPG);
+            background-attachment: fixed;
+            background-position: center 100px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="container">
+            <div class="nav-frame">
+                <div class="hamburger"></div>
+                <div id="menu576px" class="container">
+
+                    <div class="link-btn">
+                        <a href="#foodA" class="btn-foodA btn">
+                            <span>招牌石鍋拌飯/辣炒年糕</span>
+                        </a>
+                        <a href="#foodB" class="btn-foodB btn">
+                            <span>高人氣必點美食</span>
+                        </a>
+                        <a href="#foodC" class="btn-store-addres-taichung btn">
+                            <span>台中店(漢口路)</span>
+                        </a>
+                        <a href="#foodD" class="btn-store-addres-oldCityHall btn">
+                            <span>舊市府店</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="logo"></div>
+                <a href="./menu.html" target="_blank" class="menu"></a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="main-img"></div>
+        <div id="menu1920px" class="container">
+
+            <div class="link-btn">
+                <a href="#foodA" class="btn-foodA btn">
+                    <span>招牌石鍋拌飯/辣炒年糕</span>
+                </a>
+                <a href="#foodB" class="btn-foodB btn">
+                    <span>高人氣必點美食</span>
+                </a>
+                <a href="#foodC" class="btn-store-addres-taichung btn">
+                    <span>台中店(漢口路)</span>
+                </a>
+                <a href="#foodD" class="btn-store-addres-oldCityHall btn">
+                    <span>舊市府店</span>
+                </a>
+            </div>
+        </div>
+        <div id="foodA" class="foodA">
+            <div class="img1">
+                <div class="foodA-text">
+                    <span>韓式起司豬肉石鍋拌飯$240元，來到韓式料理餐廳，<br>石鍋拌飯自然也是必點！表面的起司更是覆蓋了半個石鍋，搭配上整顆完整的生蛋，不論是視覺或嗅覺上都特別吸引人，再加上剛上桌滋滋作響的聲音，讓還在拍照的我們真的快要凍美條～</span>
+                </div>
+            </div>
+            <div class="img2">
+                <div class="foodA-text2">
+                    <span>韓式年糕炒甜不辣$190元，這道應該就不用我們說太多了，看到韓式年糕直接點起來就對了！整體的份量不僅同樣給得十分大方，表面還灑有白芝麻增加香氣。</span>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="container">
+            <div id="foodB" class="foodB">
+                <div class="foodB-card">
+                    <div class="img3"></div>
+                    <div class="foodB-text">
+                        <span>起司海鮮煎餅$180元，雖然吃過不少韓式餐廳的海鮮煎餅，不過韓鄉的海鮮煎餅卻是數一數二的厚實！表面有著滿滿的乳酪絲與起司片，乍看就像可愛的韓式披薩XD</span>
+                    </div>
+                </div>
+                <div class="foodB-card">
+                    <div class="img4"></div>
+                    <div class="foodB-text">
+                        <span>銅盤烤肉(烤牛肉)$240元，平常愛吃韓式料理的朋友，肯定不能輕易錯過最經典的銅盤烤肉！銅盤烤肉的基本食材還不少，有著新鮮高麗菜、紅蘿蔔、黑木耳、豆腐、蔥段與菇類，肉品則有豬肉、雞肉與牛肉可以選擇，每盤份量足足有300克，可以說是相當有誠意！</span>
+                    </div>
+                </div>
+                <div class="foodB-card">
+                    <div class="img5"></div>
+                    <div class="foodB-text">
+                        <span>人蔘雞湯$550元，最近天氣也慢慢轉涼了，如果與家人、朋友來聚餐的話，會很推薦你們可以點上一鍋人蔘雞湯。整鍋裡面有整隻全雞</span>
+                    </div>
+                </div>
+            </div>
+            <div id="foodC" class="taichung-store-img">
+                <div class="container">
+                    <div class="store-addres-taichung">
+                        <div class="taichung-storeName">
+                            <h1>韓鄉韓國料理(漢口店)</h1>
+                        </div>
+                        <div class="taichung-addres">
+                            <span>地址:台中市西屯區漢口路二段148-2號</span>
+                            <span>電話:04-23156879</span>
+                            <span>營業時間:11:00~14:30、17:00~21:00 (無公休)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="taichung-576img"></div>
+            </div>
+
+
+            <div id="foodD">
+                <div class="store-addres-oldCityHall-frame">
+                    <div class="oldCityHall-store-img"></div>
+                    <div class="store-addres-oldCityHall">
+                        <div class="oldCityHall-storeName">
+                            <h1>韓鄉韓國料理 市府總店</h1>
+                        </div>
+                        <div class="oldCityHall-addres">
+                            <span>地址：台中市西區市府路39號</span>
+                            <span>電話：04-2229-7829</span>
+                            <span> 營業時間：11:00~22:00 (無公休)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+    <footer>
+        <div class="container">
+            <a href="#nav" class="logo"></a>
+            <div class="madeBy-frame">
+                <div class="madedBy">
+                    <h3>© 2021 by 韓鄉韓國料理. Proudly created with 韓鄉韓國料理</h3>
+                </div>
+                <div class="social-media-link">
+                    <a target="_blank" href="https://www.facebook.com/hansiang8" class="fb-link"></a>
+                    <a target="_blank" href="https://www.instagram.com/explore/tags/%E9%9F%93%E9%84%89/"
+                        class="ig-link"></a>
+                </div>
+            </div>
+            <div class="contact">
+                <span>如果您有商品、食材供應或店面出租提供，歡迎與我們連絡。</span>
+            </div>
+            <div class="contact-phoneNumber">
+                <span>聯絡電話：0912-345-678</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
